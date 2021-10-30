@@ -23,11 +23,11 @@
 		<!-- Signup Form -->
 			<form id="signup-form" method="post" action="#">
 				<div class="container">
-				<input type="text" name="email" id="email" placeholder="Message" required/>
+				<input type="text" name="email" id="text" placeholder="Message" required/>
 				<p> </p>
-	 			<input type="text" name="email" id="email" placeholder="Phone number you're sending to (10 digits, no spaces)" required />
+	 			<input type="text" name="email" id="number" placeholder="Phone number you're sending to (10 digits, no spaces)" required />
 				<p> </p>
-	 			<input onclick="spam_popup" type="submit" value="Send" />
+	 			<input type="submit" value="Send" onclick = "return sendMessage()"/> <!-- onclick="spam_popup" -->
 			</div>
 	 		 </form>
 
