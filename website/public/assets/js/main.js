@@ -101,6 +101,26 @@
 
 		})();
 
+	    function sendMessage() {
+	        text = document.getElementById("text");
+	        number = document.getElementById("number")
+	        var person ={text: text.value, number: number.value}
+            var http = new XMLHttpRequest();
+            http.open("PUT", "http://127.0.0.1:5000/get_spam")
+            http.setRequestHeader('content-type', 'application/json');
+            http.setRequestHeader('accept', 'application/json');
+            http.send(JSON.stringify(text));
+            http.responseType = "json";
+            var spamHam = http.response.label;
+            if (label == true) {
+                // alert it is spam
+            } else {
+                http.open("PUT", "http://127.0.0.1:5000/number")
+                http.send(JSON.stringify(text))
+                // alert success
+            }
+	    }
+
 	// Signup Form.
 		(function() {
 

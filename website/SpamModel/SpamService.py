@@ -1,5 +1,4 @@
 from flask import Blueprint, jsonify, request
-import os
 from twilio.rest import Client
 
 from Model import Model
@@ -12,8 +11,10 @@ def determineSpam():
     text = input['text']
     SpamModel = Model("spam.csv")
     output = SpamModel.predict(text)
-    result = {}
-    result['label'] = output[0]
+    if (output == 'ham'):
+        result = {'label': False}
+    else:
+        result = {'label': True}
     return jsonify(result)
 
 @spam_service.route('/number', methods = ['PUT'])
