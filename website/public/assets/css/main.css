@@ -808,7 +808,7 @@ button,
   #signup-form input[type="text"],
   #signup-form input[type="password"],
   #signup-form input[type="email"] {
-    width: 18em; }
+    width: 30em; }
   #signup-form > * {
     margin: 0 0 0 1em; }
   #signup-form > :first-child {
@@ -818,10 +818,7 @@ button,
       -moz-flex-direction: column;
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
-      flex-direction: column; }
-      #signup-form input[type="type"],
-      #signup-form input[type="password"],
-      #signup-form input[type="email"] {
+      flex-direction: column; } {
         width: 100%; }
       #signup-form > * {
         margin: 1.25em 0 0 0; }
