@@ -818,7 +818,10 @@ button,
       -moz-flex-direction: column;
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
-      flex-direction: column; } {
+      flex-direction: column; }
+      #signup-form input[type="type"],
+      #signup-form input[type="password"],
+      #signup-form input[type="email"] {
         width: 100%; }
       #signup-form > * {
         margin: 1.25em 0 0 0; }
