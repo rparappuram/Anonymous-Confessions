@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 
-from website.SpamModel.Model import Model
+from Model import Model
 
 spam_service = Blueprint('spam_service', __name__)
 

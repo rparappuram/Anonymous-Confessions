@@ -1,6 +1,6 @@
 from flask import Flask
 
-from website.SpamModel.SpamService import spam_service
+from SpamService import spam_service
 
 def create_app():
     app = Flask(__name__)
