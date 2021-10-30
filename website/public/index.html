@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/png" href="images/user-secret-solid.png">
 	</head>
 	<body class="is-preload">
 
@@ -21,13 +22,13 @@
 
 		<!-- Signup Form -->
 			<form id="signup-form" method="post" action="#">
-				<input type="text" name="email" id="email" placeholder="Message"/>
-			</form>
-
-			<!-- Signup Form -->
-	 		 <form id="signup-form" method="post" action="#">
-	 			 <input type="text" name="email" id="email" placeholder="Phone number you're sending to (10 digits, no spaces)" />
-	 			 <input type="submit" value="Send" />
+				<div class="container">
+				<input type="text" name="email" id="email" placeholder="Message" required/>
+				<p> </p>
+	 			<input type="text" name="email" id="email" placeholder="Phone number you're sending to (10 digits, no spaces)" required />
+				<p> </p>
+	 			<input onclick="spam_popup" type="submit" value="Send" />
+			</div>
 	 		 </form>
 
 			 <ul class="icons">
