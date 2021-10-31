@@ -1,0 +1,15 @@
+Index: website/SpamModel/SpamService.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask import Blueprint, jsonify, request\r\nimport os\r\nfrom twilio.rest import Client\r\n\r\nfrom Model import Model\r\n\r\nspam_service = Blueprint('spam_service', __name__)\r\n\r\n@spam_service.route('/get_spam', methods=['PUT'])\r\ndef determineSpam():\r\n    input = request.json\r\n    text = input['text']\r\n    SpamModel = Model(\"spam.csv\")\r\n    output = SpamModel.predict(text)\r\n    result = {}\r\n    result['label'] = output[0]\r\n    return jsonify(result)\r\n\r\n@spam_service.route('/number', methods = ['PUT'])\r\ndef sendMessage():\r\n    input = request.json\r\n    number = input['number']\r\n    message = input['message']\r\n    account_sid = \"AC4c2afe024568679028027bc192bedd85\"\r\n    auth_token  = \"226fe866c6e822abffd193a1be62b767\"\r\n    client = Client(account_sid, auth_token)\r\n    message = client.messages.create(\r\n        to=f'+1{number}',\r\n        from_=\"+12058582783\",\r\n        body=message\r\n    )\r\n    result = {}\r\n    result['message'] = 'hi'\r\n    return jsonify(result)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- website/SpamModel/SpamService.py	(revision 681a6d7d28597756d5e59a9fdedb63adb5345ed4)
++++ website/SpamModel/SpamService.py	(date 1635633078722)
+@@ -1,5 +1,4 @@
+ from flask import Blueprint, jsonify, request
+-import os
+ from twilio.rest import Client
+ 
+ from Model import Model
